@@ -25,8 +25,9 @@ const example = JSON.parse(fs.readFileSync(new URL("../examples/product-film.jso
 
 function classifyRootExample(input: unknown) {
   const packet = UniversalPacketSchema.safeParse(input);
+  // Companion parsing must not discard malformed packet fields and skip kit validation.
   const companions = [ContinuationInputSchema, SpokenClipPlanInputSchema, PostProductionPlanSchema]
-    .filter((schema) => schema.safeParse(input).success);
+    .filter((schema) => schema.strict().safeParse(input).success);
   if (Number(packet.success) + companions.length !== 1) {
     throw new Error("Example must match exactly one supported packet or companion contract schema");
   }
@@ -73,6 +74,21 @@ describe("published example coverage", () => {
     const kit = buildProductionKit(packet!);
     expect(kit.preflight.passed).toBe(false);
     expect(kit.preflight.issues).toContainEqual(expect.objectContaining({ code: "PRODUCTION_DURATION_MISMATCH" }));
+  });
+
+  it.each([
+    ["continuation.json", ContinuationInputSchema],
+    ["spoken-clip-plan.json", SpokenClipPlanInputSchema],
+    ["post-production-plan.json", PostProductionPlanSchema],
+  ] as const)("rejects malformed packets carrying valid %s fields", (filename, schema) => {
+    const companion = JSON.parse(fs.readFileSync(new URL(`../examples/${filename}`, import.meta.url), "utf8"));
+    expect(classifyRootExample(companion)).toBeNull();
+    const malformed = { ...structuredClone(example), ...companion };
+    malformed.shots[0].durationSeconds = -1;
+    expect(UniversalPacketSchema.safeParse(malformed).success).toBe(false);
+    // The permissive parser accepts this mixed shape by discarding packet fields.
+    expect(schema.safeParse(malformed).success).toBe(true);
+    expect(() => classifyRootExample(malformed)).toThrow("exactly one");
   });
 });
 
