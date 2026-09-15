@@ -55,7 +55,7 @@
     "audit:vocabulary": "node scripts/audit-contract-vocabulary.mjs"
   },
   "dependencies": {
-    "zod": "^4.4.3"
+    "zod": "^4.6.3"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",
