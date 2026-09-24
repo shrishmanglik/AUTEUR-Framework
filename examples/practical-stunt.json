@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "metadata": {
-    "title": "Fictional: The Literal Metaphor",
+    "title": "Rehearsal Performer: The Literal Metaphor",
     "format": "other",
     "aspectRatio": "16:9",
     "targetDurationSeconds": 12,
@@ -15,8 +15,8 @@
     "audioRequired": false
   },
   "story": {
-    "logline": "Take the promise of Fictional literally and build a physical world where it is simply true.",
-    "dramaticQuestion": "Does Fictional still hold once the rule of the world changes?",
+    "logline": "Take the promise of Rehearsal Performer literally and build a physical world where it is simply true.",
+    "dramaticQuestion": "Does Rehearsal Performer still hold once the rule of the world changes?",
     "beats": [
       {
         "id": "beat-1",
@@ -131,9 +131,9 @@
       ],
       "durationSeconds": 2,
       "intent": "Interrupt with the strangest true image of the idea",
-      "subject": "June with fictional in frame",
+      "subject": "June with performer in frame",
       "action": "interrupt with the strangest true image of the idea, staged so the change is visible in frame",
-      "environment": "marked mat in an empty practice, dressed plainly so fictional reads first",
+      "environment": "marked mat in an empty practice, dressed plainly so performer reads first",
       "frameStates": {},
       "camera": {
         "shotType": "wide establishing",
@@ -161,7 +161,7 @@
         "isCrushedBlacks": false
       },
       "physics": [
-        "fictional holds its mass and does not drift between beats",
+        "performer holds its mass and does not drift between beats",
         "contact between hand and object deforms both believably",
         "any settling motion decays under gravity rather than stopping abruptly"
       ],
@@ -174,7 +174,7 @@
         {
           "startSeconds": 0,
           "endSeconds": 1,
-          "action": "the frame settles and fictional is established in its opening state"
+          "action": "the frame settles and performer is established in its opening state"
         },
         {
           "startSeconds": 1,
@@ -184,7 +184,7 @@
       ],
       "continuityLocks": [
         "June identity and wardrobe unchanged",
-        "fictional geometry and finish unchanged",
+        "performer geometry and finish unchanged",
         "light direction and screen direction unchanged"
       ],
       "imperfectionAnchors": [
@@ -220,9 +220,9 @@
       ],
       "durationSeconds": 2,
       "intent": "Show the world straining without the promise",
-      "subject": "June with fictional in frame",
+      "subject": "June with performer in frame",
       "action": "show the world straining without the promise, staged so the change is visible in frame",
-      "environment": "marked mat in an empty practice, dressed plainly so fictional reads first",
+      "environment": "marked mat in an empty practice, dressed plainly so performer reads first",
       "frameStates": {},
       "camera": {
         "shotType": "medium shot",
@@ -250,7 +250,7 @@
         "isCrushedBlacks": false
       },
       "physics": [
-        "fictional holds its mass and does not drift between beats",
+        "performer holds its mass and does not drift between beats",
         "contact between hand and object deforms both believably",
         "any settling motion decays under gravity rather than stopping abruptly"
       ],
@@ -263,7 +263,7 @@
         {
           "startSeconds": 0,
           "endSeconds": 1,
-          "action": "the frame settles and fictional is established in its opening state"
+          "action": "the frame settles and performer is established in its opening state"
         },
         {
           "startSeconds": 1,
@@ -273,7 +273,7 @@
       ],
       "continuityLocks": [
         "June identity and wardrobe unchanged",
-        "fictional geometry and finish unchanged",
+        "performer geometry and finish unchanged",
         "light direction and screen direction unchanged"
       ],
       "imperfectionAnchors": [
@@ -309,9 +309,9 @@
       ],
       "durationSeconds": 3,
       "intent": "The subject enters and the rule of the world changes",
-      "subject": "June with fictional in frame",
+      "subject": "June with performer in frame",
       "action": "the subject enters and the rule of the world changes, staged so the change is visible in frame",
-      "environment": "marked mat in an empty practice, dressed plainly so fictional reads first",
+      "environment": "marked mat in an empty practice, dressed plainly so performer reads first",
       "frameStates": {},
       "camera": {
         "shotType": "tracking medium",
@@ -339,7 +339,7 @@
         "isCrushedBlacks": false
       },
       "physics": [
-        "fictional holds its mass and does not drift between beats",
+        "performer holds its mass and does not drift between beats",
         "contact between hand and object deforms both believably",
         "any settling motion decays under gravity rather than stopping abruptly"
       ],
@@ -352,7 +352,7 @@
         {
           "startSeconds": 0,
           "endSeconds": 1,
-          "action": "the frame settles and fictional is established in its opening state"
+          "action": "the frame settles and performer is established in its opening state"
         },
         {
           "startSeconds": 1,
@@ -367,7 +367,7 @@
       ],
       "continuityLocks": [
         "June identity and wardrobe unchanged",
-        "fictional geometry and finish unchanged",
+        "performer geometry and finish unchanged",
         "light direction and screen direction unchanged"
       ],
       "imperfectionAnchors": [
@@ -403,9 +403,9 @@
       ],
       "durationSeconds": 3,
       "intent": "Hero behaviour rendered as physical fact, close enough to touch",
-      "subject": "June with fictional in frame",
+      "subject": "June with performer in frame",
       "action": "hero behaviour rendered as physical fact, close enough to touch, staged so the change is visible in frame",
-      "environment": "marked mat in an empty practice, dressed plainly so fictional reads first",
+      "environment": "marked mat in an empty practice, dressed plainly so performer reads first",
       "frameStates": {},
       "camera": {
         "shotType": "extreme macro detail",
@@ -433,7 +433,7 @@
         "isCrushedBlacks": false
       },
       "physics": [
-        "fictional holds its mass and does not drift between beats",
+        "performer holds its mass and does not drift between beats",
         "contact between hand and object deforms both believably",
         "any settling motion decays under gravity rather than stopping abruptly"
       ],
@@ -446,7 +446,7 @@
         {
           "startSeconds": 0,
           "endSeconds": 1,
-          "action": "the frame settles and fictional is established in its opening state"
+          "action": "the frame settles and performer is established in its opening state"
         },
         {
           "startSeconds": 1,
@@ -461,7 +461,7 @@
       ],
       "continuityLocks": [
         "June identity and wardrobe unchanged",
-        "fictional geometry and finish unchanged",
+        "performer geometry and finish unchanged",
         "light direction and screen direction unchanged"
       ],
       "imperfectionAnchors": [
@@ -497,9 +497,9 @@
       ],
       "durationSeconds": 2,
       "intent": "One held image that owns the promise, with any title reserved for post",
-      "subject": "June with fictional in frame",
+      "subject": "June with performer in frame",
       "action": "one held image that owns the promise, with any title reserved for post, staged so the change is visible in frame",
-      "environment": "marked mat in an empty practice, dressed plainly so fictional reads first",
+      "environment": "marked mat in an empty practice, dressed plainly so performer reads first",
       "frameStates": {},
       "camera": {
         "shotType": "hero frame",
@@ -527,7 +527,7 @@
         "isCrushedBlacks": false
       },
       "physics": [
-        "fictional holds its mass and does not drift between beats",
+        "performer holds its mass and does not drift between beats",
         "contact between hand and object deforms both believably",
         "any settling motion decays under gravity rather than stopping abruptly"
       ],
@@ -540,7 +540,7 @@
         {
           "startSeconds": 0,
           "endSeconds": 1,
-          "action": "the frame settles and fictional is established in its opening state"
+          "action": "the frame settles and performer is established in its opening state"
         },
         {
           "startSeconds": 1,
@@ -550,7 +550,7 @@
       ],
       "continuityLocks": [
         "June identity and wardrobe unchanged",
-        "fictional geometry and finish unchanged",
+        "performer geometry and finish unchanged",
         "light direction and screen direction unchanged"
       ],
       "imperfectionAnchors": [

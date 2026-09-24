@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "metadata": {
-    "title": "Fictional: The Deadpan Documentary",
+    "title": "Librarian: The Deadpan Documentary",
     "format": "character-scene",
     "aspectRatio": "16:9",
     "targetDurationSeconds": 12,
@@ -15,8 +15,8 @@
     "audioRequired": false
   },
   "story": {
-    "logline": "A gravely serious documentary crew treats Fictional as the most consequential event of the decade.",
-    "dramaticQuestion": "Does Fictional still hold once the rule of the world changes?",
+    "logline": "A gravely serious documentary crew treats Librarian as the most consequential event of the decade.",
+    "dramaticQuestion": "Does Librarian still hold once the rule of the world changes?",
     "beats": [
       {
         "id": "beat-1",
@@ -82,9 +82,9 @@
       ],
       "durationSeconds": 12,
       "intent": "One continuous dramatic unit: enter late, turn once, leave early",
-      "subject": "Saul with fictional in frame",
+      "subject": "Saul with librarian in frame",
       "action": "one continuous dramatic unit: enter late, turn once, leave early, staged so the change is visible in frame",
-      "environment": "one uninterrupted view, dressed plainly so fictional reads first",
+      "environment": "one uninterrupted view, dressed plainly so librarian reads first",
       "frameStates": {},
       "camera": {
         "shotType": "two-shot",
@@ -112,7 +112,7 @@
         "isCrushedBlacks": false
       },
       "physics": [
-        "fictional holds its mass and does not drift between beats",
+        "librarian holds its mass and does not drift between beats",
         "contact between hand and object deforms both believably",
         "any settling motion decays under gravity rather than stopping abruptly"
       ],
@@ -125,7 +125,7 @@
         {
           "startSeconds": 0,
           "endSeconds": 4,
-          "action": "the frame settles and fictional is established in its opening state"
+          "action": "the frame settles and librarian is established in its opening state"
         },
         {
           "startSeconds": 4,
@@ -141,7 +141,7 @@
       "continuityLocks": [
         "Saul identity and wardrobe unchanged",
         "Cole identity and wardrobe unchanged",
-        "fictional geometry and finish unchanged",
+        "librarian geometry and finish unchanged",
         "light direction and screen direction unchanged"
       ],
       "imperfectionAnchors": [

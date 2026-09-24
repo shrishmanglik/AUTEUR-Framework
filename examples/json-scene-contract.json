@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "metadata": {
-    "title": "Fictional Conservator: The Escalation Engine",
+    "title": "Conservator: The Escalation Engine",
     "format": "other",
     "aspectRatio": "16:9",
     "targetDurationSeconds": 12,
@@ -16,7 +16,7 @@
   },
   "story": {
     "logline": "One small action involving conservator compounds shot over shot until the scale turns absurd, then lands exactly where the brief needs it.",
-    "dramaticQuestion": "Does Fictional Conservator still hold once the rule of the world changes?",
+    "dramaticQuestion": "Does Conservator still hold once the rule of the world changes?",
     "beats": [
       {
         "id": "beat-1",
@@ -71,7 +71,7 @@
       "id": "scene-1",
       "title": "Hook",
       "purpose": "Interrupt with the strangest true image of the idea",
-      "location": "fictional conservator interior, controlled light",
+      "location": "conservator interior, controlled light",
       "timeOfDay": "after dark",
       "shotIds": [
         "shot-1"
@@ -81,7 +81,7 @@
       "id": "scene-2",
       "title": "Friction",
       "purpose": "Show the world straining without the promise",
-      "location": "fictional conservator interior, controlled light",
+      "location": "conservator interior, controlled light",
       "timeOfDay": "dawn",
       "shotIds": [
         "shot-2"
@@ -91,7 +91,7 @@
       "id": "scene-3",
       "title": "The Turn",
       "purpose": "The subject enters and the rule of the world changes",
-      "location": "fictional conservator interior, controlled light",
+      "location": "conservator interior, controlled light",
       "timeOfDay": "after dark",
       "shotIds": [
         "shot-3"
@@ -101,7 +101,7 @@
       "id": "scene-4",
       "title": "Proof",
       "purpose": "Hero behaviour rendered as physical fact, close enough to touch",
-      "location": "fictional conservator interior, controlled light",
+      "location": "conservator interior, controlled light",
       "timeOfDay": "late afternoon",
       "shotIds": [
         "shot-4"
@@ -111,7 +111,7 @@
       "id": "scene-5",
       "title": "Button",
       "purpose": "One held image that owns the promise, with any title reserved for post",
-      "location": "fictional conservator interior, controlled light",
+      "location": "conservator interior, controlled light",
       "timeOfDay": "dawn",
       "shotIds": [
         "shot-5"
@@ -133,7 +133,7 @@
       "intent": "Interrupt with the strangest true image of the idea",
       "subject": "Lena with conservator in frame",
       "action": "interrupt with the strangest true image of the idea, staged so the change is visible in frame",
-      "environment": "fictional conservator, dressed plainly so conservator reads first",
+      "environment": "conservator, dressed plainly so conservator reads first",
       "frameStates": {},
       "camera": {
         "shotType": "wide establishing",
@@ -151,7 +151,7 @@
       },
       "lighting": {
         "primarySource": "a low raking work light",
-        "motivation": "the only powered source in fictional conservator",
+        "motivation": "the only powered source in conservator",
         "paletteBase": [
           "deep charcoal",
           "aged concrete",
@@ -222,7 +222,7 @@
       "intent": "Show the world straining without the promise",
       "subject": "Lena with conservator in frame",
       "action": "show the world straining without the promise, staged so the change is visible in frame",
-      "environment": "fictional conservator, dressed plainly so conservator reads first",
+      "environment": "conservator, dressed plainly so conservator reads first",
       "frameStates": {},
       "camera": {
         "shotType": "medium shot",
@@ -240,7 +240,7 @@
       },
       "lighting": {
         "primarySource": "a low raking work light",
-        "motivation": "the only powered source in fictional conservator",
+        "motivation": "the only powered source in conservator",
         "paletteBase": [
           "deep charcoal",
           "aged concrete",
@@ -311,7 +311,7 @@
       "intent": "The subject enters and the rule of the world changes",
       "subject": "Lena with conservator in frame",
       "action": "the subject enters and the rule of the world changes, staged so the change is visible in frame",
-      "environment": "fictional conservator, dressed plainly so conservator reads first",
+      "environment": "conservator, dressed plainly so conservator reads first",
       "frameStates": {},
       "camera": {
         "shotType": "tracking medium",
@@ -329,7 +329,7 @@
       },
       "lighting": {
         "primarySource": "a low raking work light",
-        "motivation": "the only powered source in fictional conservator",
+        "motivation": "the only powered source in conservator",
         "paletteBase": [
           "deep charcoal",
           "aged concrete",
@@ -405,7 +405,7 @@
       "intent": "Hero behaviour rendered as physical fact, close enough to touch",
       "subject": "Lena with conservator in frame",
       "action": "hero behaviour rendered as physical fact, close enough to touch, staged so the change is visible in frame",
-      "environment": "fictional conservator, dressed plainly so conservator reads first",
+      "environment": "conservator, dressed plainly so conservator reads first",
       "frameStates": {},
       "camera": {
         "shotType": "extreme macro detail",
@@ -423,7 +423,7 @@
       },
       "lighting": {
         "primarySource": "a low raking work light",
-        "motivation": "the only powered source in fictional conservator",
+        "motivation": "the only powered source in conservator",
         "paletteBase": [
           "deep charcoal",
           "aged concrete",
@@ -499,7 +499,7 @@
       "intent": "One held image that owns the promise, with any title reserved for post",
       "subject": "Lena with conservator in frame",
       "action": "one held image that owns the promise, with any title reserved for post, staged so the change is visible in frame",
-      "environment": "fictional conservator, dressed plainly so conservator reads first",
+      "environment": "conservator, dressed plainly so conservator reads first",
       "frameStates": {},
       "camera": {
         "shotType": "hero frame",
@@ -517,7 +517,7 @@
       },
       "lighting": {
         "primarySource": "a low raking work light",
-        "motivation": "the only powered source in fictional conservator",
+        "motivation": "the only powered source in conservator",
         "paletteBase": [
           "deep charcoal",
           "aged concrete",
