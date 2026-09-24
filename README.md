@@ -28,7 +28,7 @@ Development requests accept and deterministically route every current AUTEUR for
 
 ## Two-minute start
 
-Requirements: Node.js 22.12 or newer.
+Requirements: the `v0.11.0` install below needs Node.js 20 or newer. The `main` branch and the next release need Node.js 22.12 or newer.
 
 ```bash
 # Install directly from the public GitHub repository, pinned to a released tag.
