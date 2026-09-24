@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/shrishmanglik/auteur-frameworks/actions/workflows/ci.yml/badge.svg?branch=main&event=push)](https://github.com/shrishmanglik/auteur-frameworks/actions/workflows/ci.yml?query=branch%3Amain+event%3Apush)
 [![Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
-[![Node 20+](https://img.shields.io/badge/node-%3E%3D20-339933.svg)](package.json)
+[![Node 22.12+](https://img.shields.io/badge/node-%3E%3D22.12-339933.svg)](package.json)
 [![Frameworks: 11](https://img.shields.io/badge/frameworks-11-F59E0B.svg)](#frameworks)
 
 **Turn an idea into one complete AI-video production kit: story, scenes, shot list, storyboard, references, sound, prompts, route decisions, pre-flight, and repair.**
@@ -28,7 +28,7 @@ Development requests accept and deterministically route every current AUTEUR for
 
 ## Two-minute start
 
-Requirements: Node.js 20 or newer.
+Requirements: the `v0.11.0` install below needs Node.js 20 or newer. The `main` branch and the next release need Node.js 22.12 or newer.
 
 ```bash
 # Install directly from the public GitHub repository, pinned to a released tag.

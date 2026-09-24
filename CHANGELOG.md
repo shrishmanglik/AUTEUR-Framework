@@ -4,6 +4,15 @@ All notable public changes are recorded here. The project follows semantic versi
 
 ## Unreleased
 
+### Changed
+
+- **Breaking:** the supported Node.js floor rises from 20 to 22.12 (`engines.node` is now `>=22.12.0`) and CI runs on Node 22. Every `npm install github:...` runs `prepare`, which installs the dev toolchain to build `dist/`; that toolchain (vite 8 today, vitest 5 next) supports Node 22 only from 22.12. Node 20 is no longer tested, so `main` no longer claims it. Consumers pinned to `v0.11.0` are unaffected until they move to the next release, because that tag still declares `>=20`.
+- Raised the `zod` runtime floor from `^4.4.3` to `^4.6.5`. The generated JSON Schemas in `schemas/` are byte-identical under 4.6.5. (shrishmanglik/auteur-frameworks#22)
+
+### Added
+
+- CI deletes `schemas/*.json`, regenerates them from the zod source, and fails when the result differs from the committed files: a changed schema, a new output that was never committed, or a committed schema the generator no longer writes. Previously a zod upgrade or a schema edit could change the published schemas without any check failing.
+
 ## 0.11.0 - 2026-09-04
 
 ### Added

@@ -2,7 +2,8 @@
 
 ## Requirements
 
-- Node.js 20 or newer
+- Node.js 20 or newer for the `v0.11.0` install below
+- Node.js 22.12 or newer for the `main` branch and the next release
 - npm 10 or newer
 
 ## Install from GitHub
