@@ -18,7 +18,7 @@ npm ci
 npm run check
 ```
 
-Node.js 20 or newer is required.
+Node.js 22.12 or newer is required.
 
 ## Evidence classes
 

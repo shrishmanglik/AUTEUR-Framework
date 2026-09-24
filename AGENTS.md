@@ -73,7 +73,7 @@ carry state that the packet does not hold.
 ## Conventions
 
 - Conventional commits (`feat:`, `fix:`, `docs:`, `refactor:`, `test:`, `chore:`).
-- TypeScript, ES modules, Node >= 20. One runtime dependency (`zod`) — adding a second
+- TypeScript, ES modules, Node >= 22.12. One runtime dependency (`zod`) — adding a second
   needs maintainer approval.
 - Contribution process, framework-proposal requirements, and review expectations are in
   [`CONTRIBUTING.md`](CONTRIBUTING.md); project roles are in [`GOVERNANCE.md`](GOVERNANCE.md).
