@@ -24,7 +24,11 @@ Most generation failures start before generation:
 
 AUTEUR stores those decisions in one validated **Universal Packet**. The complete production kit, storyboards, prompt packages, QC, routing advice, and repairs are deterministic projections of that packet.
 
-Development requests accept and deterministically route every current AUTEUR format enum: short film, ad, reel, A-roll, B-roll, music video, product film, character scene, VFX, animation, image, sequence, and custom work. Executable fixtures currently validate full packet-to-kit behavior for product film, short film, vertical reel, and A-roll; other routes have exact framework-selection tests but do not yet have equivalent end-to-end fixtures. No route claim means every provider will execute every instruction correctly.
+Development requests accept and deterministically route every current AUTEUR format enum: short film, ad, reel, A-roll, B-roll, music video, product film, character scene, VFX, animation, image, sequence, and custom work. Every root JSON example is discovered and schema-validated by the test suite; every Universal Packet is compiled to a production kit and checked for a passing preflight. Continuation, spoken-clip, and post-production contracts retain their separate schemas. No route claim means every provider will execute every instruction correctly.
+
+<!-- packet-fixtures:start -->
+Executable packet-to-kit fixtures (9): [a-roll.json](examples/a-roll.json) (`avatar-a-roll-json`), [audio-first.json](examples/audio-first.json) (`audio-contract`), [continuous-take.json](examples/continuous-take.json) (`continuous-take`), [json-scene-contract.json](examples/json-scene-contract.json) (`json-scene-contract`), [practical-stunt.json](examples/practical-stunt.json) (`practical-stunt-contract`), [product-film.json](examples/product-film.json) (`cinematic-prose-stack`), [short-film.json](examples/short-film.json) (`act-shot-master-spec`), [temporal-evolution.json](examples/temporal-evolution.json) (`temporal-evolution`), [vertical-reel.json](examples/vertical-reel.json) (`timed-social-sequence`).
+<!-- packet-fixtures:end -->
 
 ## Two-minute start
 
@@ -195,14 +199,14 @@ const extension = compileContinuationPrompt(yourRenderObservedContinuation);
 - **Complete production-kit compiler** that projects story, scenes, bibles, storyboard, shot list, sound, references, continuity, prompts, QC, repairs, and exports in one call.
 - **Risk-aware route advisor** that splits delayed terminal reveals into a lexically isolated pre-reveal pass plus a render-observed continuation; directs causal contact, mechanical assembly, multi-subject dynamics, and precise spatial clearance to first/last-frame workflows; isolates exact fluid counts and compound constraint overload into split passes; and routes identity or brand control to reference-first workflows. A deterministic constraint budget blocks short shots that combine too many fragile controls, rather than pretending more prose will fix the route. Provider support remains `UNKNOWN` until the host verifies it.
 - **Storyboard projection** with ordered panels, action, camera, duration, continuity, audio, and distinct opening/terminal frame-generation instructions. Explicit `frameStates.opening` data owns the opening asset; without it, the compiler labels and warns on a minimal fallback instead of copying a composite scene into frame zero. The legacy `framePrompt` aliases the opening state.
-- **Pre-flight QC** for temporal coverage, production duration, scene ownership, continuity, audio, typography risk, and realism anchors.
+- **Pre-flight QC** checks referential integrity, timing and duration arithmetic, required audio fields, structural count thresholds for continuity locks and imperfection anchors, and declared generation-risk flags. These checks do not judge prose quality, semantic continuity, visual realism, or provider execution.
 - **Repair engine** for identity drift, anatomy, topology, object loss, broken physics, lip sync, branding, material drift, and other recurring defects.
 - **Measured refinement loop** with a typed render-observation schema, weighted scoring, a relative-improvement gate, fail-closed audio and lip-sync verification, deterministic A-roll speech-window planning, facial-biomechanics locks, and a post-flight planner that distinguishes regeneration from deterministic trim/master salvage.
 - **Spoken clip planner** that counts audible words, accepts caller-declared duration capability, selects the smallest fitting container, compiles the approved script once, and keeps one performance cue.
 - **Post-production contract** for content-addressed source clips, phrase-safe trims, selective overlays, narrative B-roll, purposeful transitions, colour matching, audio mastering, honest upscale labels, frame inspection, full-speed playback and separate human verdicts.
 - **Evidence receipts** that bind prompt and returned-media fingerprints to the observed score, normalized failure state, post-flight decision, decision reasons, field-level changes, review mode, and explicit limitations without publishing private prompts or media.
 - **Render-observed continuation compiler** with a match-frame instruction, first-motion deadline, physical spatial bridge, single-camera-path guard, time-boxed dialogue cue, and final-frame handoff. Provider output must still be audited; the instruction is not a frame-match guarantee.
-- **Four executable creator fixtures** covering a product film, short film, vertical reel, and A-roll monologue.
+- **Executable synthetic fixtures** with existence-driven packet-to-kit preflight coverage for every packet listed above, plus schema validation for the companion contracts.
 - **CLI and typed API** designed for local tools, agents, desktop apps, servers, and CI.
 
 ## Frameworks

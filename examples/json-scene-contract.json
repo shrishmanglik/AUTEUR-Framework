@@ -1,0 +1,588 @@
+{
+  "schemaVersion": "1.0.0",
+  "metadata": {
+    "title": "Conservator: The Escalation Engine",
+    "format": "other",
+    "aspectRatio": "16:9",
+    "targetDurationSeconds": 12,
+    "audience": "independent filmmakers",
+    "tone": [
+      "restrained",
+      "tactile"
+    ],
+    "providerTarget": "provider-neutral",
+    "continuityStrictness": "strict",
+    "audioRequired": false
+  },
+  "story": {
+    "logline": "One small action involving conservator compounds shot over shot until the scale turns absurd, then lands exactly where the brief needs it.",
+    "dramaticQuestion": "Does Conservator still hold once the rule of the world changes?",
+    "beats": [
+      {
+        "id": "beat-1",
+        "title": "Hook",
+        "purpose": "Interrupt with the strangest true image of the idea",
+        "emotionalTurn": "the barely contained mischief is established before anything is explained"
+      },
+      {
+        "id": "beat-2",
+        "title": "Friction",
+        "purpose": "Show the world straining without the promise",
+        "emotionalTurn": "the barely contained mischief tightens as the want becomes specific"
+      },
+      {
+        "id": "beat-3",
+        "title": "The Turn",
+        "purpose": "The subject enters and the rule of the world changes",
+        "emotionalTurn": "the barely contained mischief turns costly and the easy option closes"
+      },
+      {
+        "id": "beat-4",
+        "title": "Proof",
+        "purpose": "Hero behaviour rendered as physical fact, close enough to touch",
+        "emotionalTurn": "the barely contained mischief breaks into a decision that cannot be taken back"
+      },
+      {
+        "id": "beat-5",
+        "title": "Button",
+        "purpose": "One held image that owns the promise, with any title reserved for post",
+        "emotionalTurn": "the barely contained mischief settles into what the decision left behind"
+      }
+    ]
+  },
+  "characters": [
+    {
+      "id": "lena",
+      "name": "Lena",
+      "role": "principal",
+      "identityLock": [
+        "a person in their late twenties",
+        "dark hair pinned flat",
+        "a worn signet ring"
+      ],
+      "wardrobeLock": [
+        "a faded denim overshirt",
+        "plain dark trousers"
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "scene-1",
+      "title": "Hook",
+      "purpose": "Interrupt with the strangest true image of the idea",
+      "location": "conservator interior, controlled light",
+      "timeOfDay": "after dark",
+      "shotIds": [
+        "shot-1"
+      ]
+    },
+    {
+      "id": "scene-2",
+      "title": "Friction",
+      "purpose": "Show the world straining without the promise",
+      "location": "conservator interior, controlled light",
+      "timeOfDay": "dawn",
+      "shotIds": [
+        "shot-2"
+      ]
+    },
+    {
+      "id": "scene-3",
+      "title": "The Turn",
+      "purpose": "The subject enters and the rule of the world changes",
+      "location": "conservator interior, controlled light",
+      "timeOfDay": "after dark",
+      "shotIds": [
+        "shot-3"
+      ]
+    },
+    {
+      "id": "scene-4",
+      "title": "Proof",
+      "purpose": "Hero behaviour rendered as physical fact, close enough to touch",
+      "location": "conservator interior, controlled light",
+      "timeOfDay": "late afternoon",
+      "shotIds": [
+        "shot-4"
+      ]
+    },
+    {
+      "id": "scene-5",
+      "title": "Button",
+      "purpose": "One held image that owns the promise, with any title reserved for post",
+      "location": "conservator interior, controlled light",
+      "timeOfDay": "dawn",
+      "shotIds": [
+        "shot-5"
+      ]
+    }
+  ],
+  "shots": [
+    {
+      "id": "shot-1",
+      "sceneId": "scene-1",
+      "title": "Hook",
+      "characterIds": [
+        "lena"
+      ],
+      "generationRisks": [
+        "IDENTITY_OR_PERFORMANCE"
+      ],
+      "durationSeconds": 2,
+      "intent": "Interrupt with the strangest true image of the idea",
+      "subject": "Lena with conservator in frame",
+      "action": "interrupt with the strangest true image of the idea, staged so the change is visible in frame",
+      "environment": "conservator, dressed plainly so conservator reads first",
+      "frameStates": {},
+      "camera": {
+        "shotType": "wide establishing",
+        "movement": "locked tripod with a slow settle",
+        "framing": "subject on the lower third with the world readable above",
+        "focusBehavior": "deep focus holds both subject and environment legible",
+        "optics": {
+          "cameraBody": "full-frame cinema camera",
+          "lensModel": "spherical prime",
+          "focalLengthMm": 24,
+          "tStop": 5.6,
+          "subjectDistanceMeters": 6
+        },
+        "capture": {}
+      },
+      "lighting": {
+        "primarySource": "a low raking work light",
+        "motivation": "the only powered source in conservator",
+        "paletteBase": [
+          "deep charcoal",
+          "aged concrete",
+          "dust grey"
+        ],
+        "isDesaturated": true,
+        "isCrushedBlacks": false
+      },
+      "physics": [
+        "conservator holds its mass and does not drift between beats",
+        "contact between hand and object deforms both believably",
+        "any settling motion decays under gravity rather than stopping abruptly"
+      ],
+      "materials": [
+        "brushed steel",
+        "scarred walnut",
+        "aged paper"
+      ],
+      "beats": [
+        {
+          "startSeconds": 0,
+          "endSeconds": 1,
+          "action": "the frame settles and conservator is established in its opening state"
+        },
+        {
+          "startSeconds": 1,
+          "endSeconds": 2,
+          "action": "the beat resolves into a stable handoff"
+        }
+      ],
+      "continuityLocks": [
+        "Lena identity and wardrobe unchanged",
+        "conservator geometry and finish unchanged",
+        "light direction and screen direction unchanged"
+      ],
+      "imperfectionAnchors": [
+        "dust settled along a single seam",
+        "an uneven patina where the object is handled most",
+        "a hairline scratch catching the key light"
+      ],
+      "performance": {},
+      "audioTrack": {
+        "soundDesignDirectives": [
+          "close handling contact on the hero object",
+          "low room tone with no music bed",
+          "one distant environmental layer"
+        ],
+        "musicDirective": "no score"
+      },
+      "exclusions": [
+        "no invented signage, logos, or on-screen text",
+        "no identity drift between beats",
+        "no unmotivated camera move"
+      ],
+      "frameworkId": "json-scene-contract"
+    },
+    {
+      "id": "shot-2",
+      "sceneId": "scene-2",
+      "title": "Friction",
+      "characterIds": [
+        "lena"
+      ],
+      "generationRisks": [
+        "IDENTITY_OR_PERFORMANCE"
+      ],
+      "durationSeconds": 2,
+      "intent": "Show the world straining without the promise",
+      "subject": "Lena with conservator in frame",
+      "action": "show the world straining without the promise, staged so the change is visible in frame",
+      "environment": "conservator, dressed plainly so conservator reads first",
+      "frameStates": {},
+      "camera": {
+        "shotType": "medium shot",
+        "movement": "slow measured push",
+        "framing": "subject centred with working space camera-left",
+        "focusBehavior": "focus holds the subject with the background softly separated",
+        "optics": {
+          "cameraBody": "full-frame cinema camera",
+          "lensModel": "spherical prime",
+          "focalLengthMm": 40,
+          "tStop": 2.8,
+          "subjectDistanceMeters": 2.5
+        },
+        "capture": {}
+      },
+      "lighting": {
+        "primarySource": "a low raking work light",
+        "motivation": "the only powered source in conservator",
+        "paletteBase": [
+          "deep charcoal",
+          "aged concrete",
+          "dust grey"
+        ],
+        "isDesaturated": true,
+        "isCrushedBlacks": false
+      },
+      "physics": [
+        "conservator holds its mass and does not drift between beats",
+        "contact between hand and object deforms both believably",
+        "any settling motion decays under gravity rather than stopping abruptly"
+      ],
+      "materials": [
+        "painted concrete",
+        "aged paper",
+        "matte ceramic"
+      ],
+      "beats": [
+        {
+          "startSeconds": 0,
+          "endSeconds": 1,
+          "action": "the frame settles and conservator is established in its opening state"
+        },
+        {
+          "startSeconds": 1,
+          "endSeconds": 2,
+          "action": "the beat resolves into a stable handoff"
+        }
+      ],
+      "continuityLocks": [
+        "Lena identity and wardrobe unchanged",
+        "conservator geometry and finish unchanged",
+        "light direction and screen direction unchanged"
+      ],
+      "imperfectionAnchors": [
+        "a faint fingerprint on the nearest surface",
+        "a hairline scratch catching the key light",
+        "an uneven patina where the object is handled most"
+      ],
+      "performance": {},
+      "audioTrack": {
+        "soundDesignDirectives": [
+          "close handling contact on the hero object",
+          "one distant environmental layer",
+          "low room tone with no music bed"
+        ],
+        "musicDirective": "no score"
+      },
+      "exclusions": [
+        "no invented signage, logos, or on-screen text",
+        "no identity drift between beats",
+        "no unmotivated camera move"
+      ],
+      "frameworkId": "json-scene-contract"
+    },
+    {
+      "id": "shot-3",
+      "sceneId": "scene-3",
+      "title": "The Turn",
+      "characterIds": [
+        "lena"
+      ],
+      "generationRisks": [
+        "IDENTITY_OR_PERFORMANCE"
+      ],
+      "durationSeconds": 3,
+      "intent": "The subject enters and the rule of the world changes",
+      "subject": "Lena with conservator in frame",
+      "action": "the subject enters and the rule of the world changes, staged so the change is visible in frame",
+      "environment": "conservator, dressed plainly so conservator reads first",
+      "frameStates": {},
+      "camera": {
+        "shotType": "tracking medium",
+        "movement": "tracking follow at walking pace",
+        "framing": "subject held at a constant screen position while the world moves",
+        "focusBehavior": "focus tracks the subject through the move",
+        "optics": {
+          "cameraBody": "full-frame cinema camera",
+          "lensModel": "spherical prime",
+          "focalLengthMm": 35,
+          "tStop": 2.8,
+          "subjectDistanceMeters": 2.2
+        },
+        "capture": {}
+      },
+      "lighting": {
+        "primarySource": "a low raking work light",
+        "motivation": "the only powered source in conservator",
+        "paletteBase": [
+          "deep charcoal",
+          "aged concrete",
+          "dust grey"
+        ],
+        "isDesaturated": true,
+        "isCrushedBlacks": false
+      },
+      "physics": [
+        "conservator holds its mass and does not drift between beats",
+        "contact between hand and object deforms both believably",
+        "any settling motion decays under gravity rather than stopping abruptly"
+      ],
+      "materials": [
+        "aged paper",
+        "matte ceramic",
+        "painted concrete"
+      ],
+      "beats": [
+        {
+          "startSeconds": 0,
+          "endSeconds": 1,
+          "action": "the frame settles and conservator is established in its opening state"
+        },
+        {
+          "startSeconds": 1,
+          "endSeconds": 2,
+          "action": "the subject enters and the rule of the world changes, staged so the change is visible in frame"
+        },
+        {
+          "startSeconds": 2,
+          "endSeconds": 3,
+          "action": "the beat resolves into a stable handoff"
+        }
+      ],
+      "continuityLocks": [
+        "Lena identity and wardrobe unchanged",
+        "conservator geometry and finish unchanged",
+        "light direction and screen direction unchanged"
+      ],
+      "imperfectionAnchors": [
+        "a hairline scratch catching the key light",
+        "an uneven patina where the object is handled most",
+        "dust settled along a single seam"
+      ],
+      "performance": {},
+      "audioTrack": {
+        "soundDesignDirectives": [
+          "one distant environmental layer",
+          "fabric movement bound to visible motion",
+          "low room tone with no music bed"
+        ],
+        "musicDirective": "no score"
+      },
+      "exclusions": [
+        "no invented signage, logos, or on-screen text",
+        "no identity drift between beats",
+        "no unmotivated camera move"
+      ],
+      "frameworkId": "json-scene-contract"
+    },
+    {
+      "id": "shot-4",
+      "sceneId": "scene-4",
+      "title": "Proof",
+      "characterIds": [
+        "lena"
+      ],
+      "generationRisks": [
+        "IDENTITY_OR_PERFORMANCE"
+      ],
+      "durationSeconds": 3,
+      "intent": "Hero behaviour rendered as physical fact, close enough to touch",
+      "subject": "Lena with conservator in frame",
+      "action": "hero behaviour rendered as physical fact, close enough to touch, staged so the change is visible in frame",
+      "environment": "conservator, dressed plainly so conservator reads first",
+      "frameStates": {},
+      "camera": {
+        "shotType": "extreme macro detail",
+        "movement": "micro parallax across the surface",
+        "framing": "the detail fills the lower centre of frame",
+        "focusBehavior": "focus settles from the leading edge to the material grain",
+        "optics": {
+          "cameraBody": "full-frame cinema camera",
+          "lensModel": "macro prime",
+          "focalLengthMm": 100,
+          "tStop": 4,
+          "subjectDistanceMeters": 0.5
+        },
+        "capture": {}
+      },
+      "lighting": {
+        "primarySource": "a low raking work light",
+        "motivation": "the only powered source in conservator",
+        "paletteBase": [
+          "deep charcoal",
+          "aged concrete",
+          "dust grey"
+        ],
+        "isDesaturated": true,
+        "isCrushedBlacks": false
+      },
+      "physics": [
+        "conservator holds its mass and does not drift between beats",
+        "contact between hand and object deforms both believably",
+        "any settling motion decays under gravity rather than stopping abruptly"
+      ],
+      "materials": [
+        "matte ceramic",
+        "oxidised brass",
+        "aged paper"
+      ],
+      "beats": [
+        {
+          "startSeconds": 0,
+          "endSeconds": 1,
+          "action": "the frame settles and conservator is established in its opening state"
+        },
+        {
+          "startSeconds": 1,
+          "endSeconds": 2,
+          "action": "hero behaviour rendered as physical fact, close enough to touch, staged so the change is visible in frame"
+        },
+        {
+          "startSeconds": 2,
+          "endSeconds": 3,
+          "action": "the beat resolves into a stable handoff"
+        }
+      ],
+      "continuityLocks": [
+        "Lena identity and wardrobe unchanged",
+        "conservator geometry and finish unchanged",
+        "light direction and screen direction unchanged"
+      ],
+      "imperfectionAnchors": [
+        "dust settled along a single seam",
+        "a faint fingerprint on the nearest surface",
+        "an uneven patina where the object is handled most"
+      ],
+      "performance": {},
+      "audioTrack": {
+        "soundDesignDirectives": [
+          "close handling contact on the hero object",
+          "fabric movement bound to visible motion",
+          "low room tone with no music bed"
+        ],
+        "musicDirective": "no score"
+      },
+      "exclusions": [
+        "no invented signage, logos, or on-screen text",
+        "no identity drift between beats",
+        "no unmotivated camera move"
+      ],
+      "frameworkId": "json-scene-contract"
+    },
+    {
+      "id": "shot-5",
+      "sceneId": "scene-5",
+      "title": "Button",
+      "characterIds": [
+        "lena"
+      ],
+      "generationRisks": [
+        "IDENTITY_OR_PERFORMANCE"
+      ],
+      "durationSeconds": 2,
+      "intent": "One held image that owns the promise, with any title reserved for post",
+      "subject": "Lena with conservator in frame",
+      "action": "one held image that owns the promise, with any title reserved for post, staged so the change is visible in frame",
+      "environment": "conservator, dressed plainly so conservator reads first",
+      "frameStates": {},
+      "camera": {
+        "shotType": "hero frame",
+        "movement": "slow release and hold",
+        "framing": "subject composed dead centre with symmetrical margin",
+        "focusBehavior": "focus rests on the subject and does not travel",
+        "optics": {
+          "cameraBody": "full-frame cinema camera",
+          "lensModel": "spherical prime",
+          "focalLengthMm": 50,
+          "tStop": 2.8,
+          "subjectDistanceMeters": 1.8
+        },
+        "capture": {}
+      },
+      "lighting": {
+        "primarySource": "a low raking work light",
+        "motivation": "the only powered source in conservator",
+        "paletteBase": [
+          "deep charcoal",
+          "aged concrete",
+          "dust grey"
+        ],
+        "isDesaturated": true,
+        "isCrushedBlacks": false
+      },
+      "physics": [
+        "conservator holds its mass and does not drift between beats",
+        "contact between hand and object deforms both believably",
+        "any settling motion decays under gravity rather than stopping abruptly"
+      ],
+      "materials": [
+        "scarred walnut",
+        "brushed steel",
+        "painted concrete"
+      ],
+      "beats": [
+        {
+          "startSeconds": 0,
+          "endSeconds": 1,
+          "action": "the frame settles and conservator is established in its opening state"
+        },
+        {
+          "startSeconds": 1,
+          "endSeconds": 2,
+          "action": "the final state holds, composed, until the cut"
+        }
+      ],
+      "continuityLocks": [
+        "Lena identity and wardrobe unchanged",
+        "conservator geometry and finish unchanged",
+        "light direction and screen direction unchanged"
+      ],
+      "imperfectionAnchors": [
+        "an uneven patina where the object is handled most",
+        "a hairline scratch catching the key light",
+        "dust settled along a single seam"
+      ],
+      "performance": {},
+      "audioTrack": {
+        "soundDesignDirectives": [
+          "close handling contact on the hero object",
+          "fabric movement bound to visible motion",
+          "one distant environmental layer"
+        ],
+        "musicDirective": "no score"
+      },
+      "exclusions": [
+        "no invented signage, logos, or on-screen text",
+        "no identity drift between beats",
+        "no unmotivated camera move"
+      ],
+      "frameworkId": "json-scene-contract"
+    }
+  ],
+  "globalStyle": [
+    "kinetic, rhythmic, precisely choreographed",
+    "barely contained mischief",
+    "physically credible materials"
+  ],
+  "globalExclusions": [
+    "no identity drift",
+    "no generated signage",
+    "no unmotivated lens flare"
+  ]
+}

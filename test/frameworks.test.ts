@@ -4,6 +4,10 @@ import {
   FRAMEWORKS,
   ContentFormatSchema,
   UniversalPacketSchema,
+  ContinuationInputSchema,
+  SpokenClipPlanInputSchema,
+  PostProductionPlanSchema,
+  buildProductionKit,
   assessShotRoute,
   buildRepairPrompt,
   buildStoryboard,
@@ -18,6 +22,75 @@ import {
 } from "../src/index.js";
 
 const example = JSON.parse(fs.readFileSync(new URL("../examples/product-film.json", import.meta.url), "utf8"));
+
+function classifyRootExample(input: unknown) {
+  const packet = UniversalPacketSchema.safeParse(input);
+  // Companion parsing must not discard malformed packet fields and skip kit validation.
+  const companions = [ContinuationInputSchema, SpokenClipPlanInputSchema, PostProductionPlanSchema]
+    .filter((schema) => schema.strict().safeParse(input).success);
+  if (Number(packet.success) + companions.length !== 1) {
+    throw new Error("Example must match exactly one supported packet or companion contract schema");
+  }
+  return packet.success ? packet.data : null;
+}
+
+describe("published example coverage", () => {
+  it("validates every root JSON example and preflights every discovered packet", () => {
+    const examplesUrl = new URL("../examples/", import.meta.url);
+    const files = fs.readdirSync(examplesUrl, { withFileTypes: true })
+      .filter((entry) => entry.isFile() && entry.name.endsWith(".json"))
+      .map((entry) => entry.name).sort();
+    expect(files.length).toBeGreaterThan(0);
+    const exercised: string[] = [];
+    for (const filename of files) {
+      const input = JSON.parse(fs.readFileSync(new URL(filename, examplesUrl), "utf8"));
+      const packet = classifyRootExample(input);
+      if (!packet) continue;
+      const kit = buildProductionKit(packet);
+      expect(kit.preflight.passed, `${filename}: ${JSON.stringify(kit.preflight.issues)}`).toBe(true);
+      const frameworks = [...new Set(packet.shots.map((shot) => shot.frameworkId))].sort();
+      exercised.push(`[${filename}](examples/${filename}) (${frameworks.map((id) => `\`${id}\``).join(", ")})`);
+    }
+    expect(exercised.length).toBeGreaterThan(0);
+    const inventory = `Executable packet-to-kit fixtures (${exercised.length}): ${exercised.join(", ")}.`;
+    console.info(`AUTEUR_PACKET_FIXTURES: ${inventory}`);
+    console.info(`AUTEUR_EXAMPLE_COUNTS: ${files.length} root JSON; ${exercised.length} packets; ${files.length - exercised.length} companion contracts`);
+    const readme = fs.readFileSync(new URL("../README.md", import.meta.url), "utf8");
+    expect(readme).toContain(`<!-- packet-fixtures:start -->\n${inventory}\n<!-- packet-fixtures:end -->`);
+  });
+
+  it("rejects unknown and malformed examples instead of skipping them", () => {
+    expect(() => classifyRootExample({ unknown: true })).toThrow("exactly one");
+    const malformed = structuredClone(example);
+    malformed.shots[0].durationSeconds = -1;
+    expect(() => classifyRootExample(malformed)).toThrow("exactly one");
+  });
+
+  it("detects a structural preflight error in an otherwise valid packet", () => {
+    const invalidTiming = structuredClone(example);
+    invalidTiming.metadata.targetDurationSeconds += 1;
+    const packet = classifyRootExample(invalidTiming);
+    expect(packet).not.toBeNull();
+    const kit = buildProductionKit(packet!);
+    expect(kit.preflight.passed).toBe(false);
+    expect(kit.preflight.issues).toContainEqual(expect.objectContaining({ code: "PRODUCTION_DURATION_MISMATCH" }));
+  });
+
+  it.each([
+    ["continuation.json", ContinuationInputSchema],
+    ["spoken-clip-plan.json", SpokenClipPlanInputSchema],
+    ["post-production-plan.json", PostProductionPlanSchema],
+  ] as const)("rejects malformed packets carrying valid %s fields", (filename, schema) => {
+    const companion = JSON.parse(fs.readFileSync(new URL(`../examples/${filename}`, import.meta.url), "utf8"));
+    expect(classifyRootExample(companion)).toBeNull();
+    const malformed = { ...structuredClone(example), ...companion };
+    malformed.shots[0].durationSeconds = -1;
+    expect(UniversalPacketSchema.safeParse(malformed).success).toBe(false);
+    // The permissive parser accepts this mixed shape by discarding packet fields.
+    expect(schema.safeParse(malformed).success).toBe(true);
+    expect(() => classifyRootExample(malformed)).toThrow("exactly one");
+  });
+});
 
 describe("universal packet", () => {
   it("parses the synthetic product-film example", () => {

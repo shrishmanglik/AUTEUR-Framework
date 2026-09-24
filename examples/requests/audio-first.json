@@ -1,0 +1,24 @@
+{
+  "targetDurationSeconds": 12,
+  "aspectRatio": "16:9",
+  "audience": "independent filmmakers",
+  "tone": [
+    "restrained",
+    "tactile"
+  ],
+  "constraints": [
+    "synthetic scene",
+    "one location",
+    "no generated typography"
+  ],
+  "hasDialogue": false,
+  "idea": "A fictional bell maker taps a bronze bell once and listens as its resonant decay gives way to the quiet workshop.",
+  "format": "other",
+  "audioFirst": true,
+  "audioRequired": true,
+  "mustInclude": [
+    "one audible bell strike",
+    "a sustained natural decay",
+    "quiet room tone"
+  ]
+}

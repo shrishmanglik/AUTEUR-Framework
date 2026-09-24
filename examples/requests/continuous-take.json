@@ -1,0 +1,22 @@
+{
+  "targetDurationSeconds": 12,
+  "aspectRatio": "16:9",
+  "audience": "independent filmmakers",
+  "tone": [
+    "restrained",
+    "tactile"
+  ],
+  "constraints": [
+    "synthetic scene",
+    "one location",
+    "no generated typography"
+  ],
+  "hasDialogue": false,
+  "idea": "A fictional librarian discovers a torn page and places a ribbon beside it before closing the book in one uninterrupted view.",
+  "format": "character-scene",
+  "mustInclude": [
+    "one worn book",
+    "one ribbon",
+    "a continuous camera path"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "targetDurationSeconds": 12,
+  "aspectRatio": "16:9",
+  "audience": "independent filmmakers",
+  "tone": [
+    "restrained",
+    "tactile"
+  ],
+  "constraints": [
+    "synthetic scene",
+    "one location",
+    "no generated typography"
+  ],
+  "hasDialogue": false,
+  "idea": "A fictional conservator turns a clay seal under a desk lamp until its shallow impression becomes readable.",
+  "format": "other",
+  "requiresMachineReadableSceneContract": true,
+  "mustInclude": [
+    "one clay seal",
+    "one deliberate turn",
+    "a stable final position"
+  ]
+}

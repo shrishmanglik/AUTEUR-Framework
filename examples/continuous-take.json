@@ -1,0 +1,179 @@
+{
+  "schemaVersion": "1.0.0",
+  "metadata": {
+    "title": "Librarian: The Deadpan Documentary",
+    "format": "character-scene",
+    "aspectRatio": "16:9",
+    "targetDurationSeconds": 12,
+    "audience": "independent filmmakers",
+    "tone": [
+      "restrained",
+      "tactile"
+    ],
+    "providerTarget": "provider-neutral",
+    "continuityStrictness": "strict",
+    "audioRequired": false
+  },
+  "story": {
+    "logline": "A gravely serious documentary crew treats Librarian as the most consequential event of the decade.",
+    "dramaticQuestion": "Does Librarian still hold once the rule of the world changes?",
+    "beats": [
+      {
+        "id": "beat-1",
+        "title": "The scene",
+        "purpose": "One continuous dramatic unit: enter late, turn once, leave early",
+        "emotionalTurn": "the solemn absurdity is established before anything is explained"
+      }
+    ]
+  },
+  "characters": [
+    {
+      "id": "saul",
+      "name": "Saul",
+      "role": "principal",
+      "identityLock": [
+        "a person in their early thirties",
+        "shoulder-length hair tied back",
+        "a worn signet ring"
+      ],
+      "wardrobeLock": [
+        "a faded denim overshirt",
+        "worn canvas shoes"
+      ]
+    },
+    {
+      "id": "cole",
+      "name": "Cole",
+      "role": "counterpart",
+      "identityLock": [
+        "a person in their forties",
+        "dark hair pinned flat",
+        "reading glasses pushed up"
+      ],
+      "wardrobeLock": [
+        "a navy jacket over a plain tee",
+        "worn canvas shoes"
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "scene-1",
+      "title": "The scene",
+      "purpose": "One continuous dramatic unit: enter late, turn once, leave early",
+      "location": "one uninterrupted view interior, controlled light",
+      "timeOfDay": "after dark",
+      "shotIds": [
+        "shot-1"
+      ]
+    }
+  ],
+  "shots": [
+    {
+      "id": "shot-1",
+      "sceneId": "scene-1",
+      "title": "The scene",
+      "characterIds": [
+        "saul",
+        "cole"
+      ],
+      "generationRisks": [
+        "IDENTITY_OR_PERFORMANCE"
+      ],
+      "durationSeconds": 12,
+      "intent": "One continuous dramatic unit: enter late, turn once, leave early",
+      "subject": "Saul with librarian in frame",
+      "action": "one continuous dramatic unit: enter late, turn once, leave early, staged so the change is visible in frame",
+      "environment": "one uninterrupted view, dressed plainly so librarian reads first",
+      "frameStates": {},
+      "camera": {
+        "shotType": "two-shot",
+        "movement": "locked tripod",
+        "framing": "both figures held across the frame with the object between them",
+        "focusBehavior": "split focus keeps both faces and the object readable",
+        "optics": {
+          "cameraBody": "full-frame cinema camera",
+          "lensModel": "spherical prime",
+          "focalLengthMm": 35,
+          "tStop": 2.8,
+          "subjectDistanceMeters": 3
+        },
+        "capture": {}
+      },
+      "lighting": {
+        "primarySource": "one large north-facing window",
+        "motivation": "the only powered source in one uninterrupted view",
+        "paletteBase": [
+          "deep charcoal",
+          "cool tungsten",
+          "muted navy"
+        ],
+        "isDesaturated": true,
+        "isCrushedBlacks": false
+      },
+      "physics": [
+        "librarian holds its mass and does not drift between beats",
+        "contact between hand and object deforms both believably",
+        "any settling motion decays under gravity rather than stopping abruptly"
+      ],
+      "materials": [
+        "matte ceramic",
+        "scarred walnut",
+        "brushed steel"
+      ],
+      "beats": [
+        {
+          "startSeconds": 0,
+          "endSeconds": 4,
+          "action": "the frame settles and librarian is established in its opening state"
+        },
+        {
+          "startSeconds": 4,
+          "endSeconds": 8,
+          "action": "one continuous dramatic unit: enter late, turn once, leave early, staged so the change is visible in frame"
+        },
+        {
+          "startSeconds": 8,
+          "endSeconds": 12,
+          "action": "the final state holds, composed, until the cut"
+        }
+      ],
+      "continuityLocks": [
+        "Saul identity and wardrobe unchanged",
+        "Cole identity and wardrobe unchanged",
+        "librarian geometry and finish unchanged",
+        "light direction and screen direction unchanged"
+      ],
+      "imperfectionAnchors": [
+        "a hairline scratch catching the key light",
+        "dust settled along a single seam",
+        "a faint fingerprint on the nearest surface"
+      ],
+      "performance": {},
+      "audioTrack": {
+        "soundDesignDirectives": [
+          "low room tone with no music bed",
+          "fabric movement bound to visible motion",
+          "one distant environmental layer"
+        ],
+        "musicDirective": "no score"
+      },
+      "exclusions": [
+        "no invented signage, logos, or on-screen text",
+        "no identity drift between beats",
+        "no unmotivated camera move"
+      ],
+      "frameworkId": "continuous-take"
+    }
+  ],
+  "globalStyle": [
+    "documentary naturalism, tripod discipline",
+    "solemn absurdity",
+    "physically credible materials"
+  ],
+  "globalExclusions": [
+    "no identity drift",
+    "no generated signage",
+    "no unmotivated lens flare"
+  ]
+}

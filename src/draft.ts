@@ -70,7 +70,33 @@ const STOPWORDS = new Set((
   + "here,what,which,how,why,his,her,him,hers,them,through,while,against,between,because,so,too,"
   + "also,only,ever,never,once,by,as,up,down,out,off,not,no,yes,do,does,did,has,have,had,get,"
   + "gets,got,go,goes,went,second,seconds,minute,minutes,vertical,horizontal,direct,camera,"
-  + "called,format,create,cinematic"
+  + "called,format,create,cinematic,"
+  // Prepositions, adverbs and quantifiers the list above lacked. "throughout" is not what a
+  // film is about, but as the longest word in "keeping its base fixed throughout" it became
+  // the anchor of a published example.
+  + "throughout,beside,besides,until,onto,upon,within,without,across,around,along,among,amid,"
+  + "beyond,behind,beneath,below,above,toward,towards,during,despite,underneath,inside,outside,"
+  + "again,even,always,already,almost,away,together,instead,ago,yet,twice,every,each,some,any,"
+  + "all,both,either,neither,such,other,another,same,own,more,most,less,least,many,much,few,"
+  + "nobody,somebody,anybody,everybody,someone,anyone,everyone,nothing,something,anything,"
+  + "everything,"
+  // Framing words state the production's status, not what is in frame: "a fictional
+  // librarian" is about the librarian. Scored on length, "fictional" anchored three examples.
+  + "fictional,fictitious,imaginary,hypothetical,synthetic,invented"
+).split(","));
+
+// A trailing -s marks a plural or a third-person verb; "glass", "status" and "axis" are neither.
+const endsInVerbS = (word: string): boolean => /s$/.test(word) && !/(?:ss|us|is)$/.test(word);
+
+// Irregular past forms carry no -ed, so the suffix filter reads them as nouns: "a process
+// nobody on the team actually understood" anchored on "understood". Forms that are also
+// common production nouns (set, cut, felt, rose, saw, run) are deliberately left out.
+const IRREGULAR_PAST = new Set((
+  "understood,withstood,stood,built,made,done,gone,known,shown,thrown,grown,drawn,flown,"
+  + "blown,held,told,sold,found,kept,lost,meant,met,paid,said,sent,spent,taught,thought,"
+  + "brought,bought,caught,fought,sought,won,begun,sung,swum,struck,stuck,hung,dug,spun,"
+  + "fled,sped,slid,hid,woke,broke,chose,froze,stole,swore,drove,wrote,rode,gave,came,"
+  + "became,took,shook,forgot,heard,laid,slept,wept,crept,swept,knelt,dealt,leapt"
 ).split(","));
 
 const FORMAT_NOISE = /\b(?:\d+(?:\.\d+)?\s*(?:s|sec|secs|second|seconds|min|mins|minute|minutes)|short\s+film|music\s+video|a-?roll|vertical\s+reel|reel|trailer|teaser|video|film|commercial|scene|shot)\b/gi;
@@ -97,15 +123,14 @@ function namedSubject(clean: string): string {
 export function parseIdea(idea: string): ParsedIdea {
   const clean = String(idea ?? "").replace(/\s+/g, " ").trim();
   const semantic = clean.replace(FORMAT_NOISE, " ").replace(/\s+/g, " ").trim();
-  const words = semantic.split(/[^a-zA-Z0-9'-]+/).filter(Boolean);
-  const content = words.filter((word) => word.length > 2 && !STOPWORDS.has(word.toLowerCase()));
+  // Punctuation is kept as a token of its own so a noun phrase never runs across a comma.
+  const tokens = semantic.match(/[a-zA-Z0-9'-]+|[^a-zA-Z0-9'\s-]/g) ?? [];
+  const isContent = (token: string): boolean => (
+    /^[a-zA-Z0-9'-]+$/.test(token) && token.length > 2 && !STOPWORDS.has(token.toLowerCase())
+  );
+  const content = tokens.filter(isContent);
   const explicitName = namedSubject(clean);
 
-  // The most specific word, not the first one. Taking content[0] made "On her last night
-  // shift before the tower is automated, a junior air traffic controller..." yield the
-  // anchor "night" and the subject "Night Shift Tower Automated". Word length is a crude
-  // but deterministic proxy for specificity, and it picks "controller" over "night".
-  // Ties go to the earliest occurrence so the result stays stable.
   // Score on the longest hyphen-free part: "night-shift" and "hand-blown" are long strings
   // but adjectival, and scoring them whole let them beat concrete nouns like "controller".
   const specificity = (word: string): number => Math.max(
@@ -114,31 +139,80 @@ export function parseIdea(idea: string): ParsedIdea {
   // Verb and participle forms are long without being the thing the film is about, and
   // length alone cannot see that. This is a crude morphological filter, not a
   // part-of-speech tagger: it demotes "discovers", "poured" and "unbroken" so the concrete
-  // noun beside them wins. Nouns are only demoted when a candidate survives, so a sentence
-  // of nothing but verbs still yields an anchor.
+  // noun beside them wins.
   const looksInflected = (word: string): boolean => (
-    /(?:ing|ed|en|ly)$/.test(word) || (/s$/.test(word) && !/(?:ss|us|is)$/.test(word))
+    /(?:ing|ed|en|ly)$/.test(word) || endsInVerbS(word) || IRREGULAR_PAST.has(word.toLowerCase())
   );
-  const nouns = content.filter((word) => !looksInflected(word));
-  const candidates = nouns.length ? nouns : content;
 
-  let best = candidates[0] ?? "";
-  for (const word of candidates) {
-    if (specificity(word) > specificity(best)) best = word;
+  // Candidates are the heads of noun phrases. English noun phrases end on their noun, so in
+  // a run of adjacent content words the earlier ones are modifiers: "fictional bell maker",
+  // "bronze bell", "clay seal", "air traffic controller". Scoring every word on length, as
+  // the first version did, let a long modifier or adverb win: "fictional" beat "librarian"
+  // and "throughout" beat "sapling". A run ends at a stopword, at punctuation, and after an
+  // -s form followed by another content word, which is a verb ("taps", "becomes") rather
+  // than a modifier. Participles stay inside the run ("low padded barrier") but cannot be
+  // its head.
+  const phrases: string[][] = [];
+  let run: string[] = [];
+  for (const token of tokens) {
+    if (!isContent(token)) {
+      if (run.length) phrases.push(run);
+      run = [];
+      continue;
+    }
+    const previous = run.at(-1);
+    if (previous && endsInVerbS(previous)) {
+      phrases.push(run);
+      run = [];
+    }
+    run.push(token);
   }
-  const anchorIndex = Math.max(0, content.indexOf(best));
+  if (run.length) phrases.push(run);
+
+  const heads = phrases.flatMap((words) => {
+    // An -ing word directly before a finite -s verb is that verb's subject, so a noun:
+    // "a paper sapling unfolds", "the ceiling drips". Read as a participle, "sapling" lost
+    // to its own modifier and the tree example was titled "Paper".
+    const canHead = (index: number): boolean => {
+      const word = words[index]!;
+      const next = words[index + 1];
+      return !looksInflected(word) || (/ing$/.test(word) && next !== undefined && endsInVerbS(next));
+    };
+    let headIndex = words.length - 1;
+    while (headIndex >= 0 && !canHead(headIndex)) headIndex -= 1;
+    if (headIndex < 0) return [];
+    const head = words[headIndex]!;
+    // The subject reads as the noun phrase itself, without a participle, capped at three
+    // words so "junior air traffic controller" titles as "Air Traffic Controller".
+    const phrase = words.slice(0, headIndex + 1)
+      .filter((word) => word === head || !looksInflected(word))
+      .slice(-3)
+      .join(" ");
+    return [{ head, phrase }];
+  });
+
+  // A head the idea names more than once is what it is about ("a bell maker taps a bronze
+  // bell"); only then does length stand in for specificity. Ties go to the earliest head so
+  // the result stays stable. A sentence with no noun-like head still yields an anchor from
+  // its content words.
+  const mentions = (word: string): number => (
+    content.filter((other) => other.toLowerCase() === word.toLowerCase()).length
+  );
+  const best = heads.reduce<(typeof heads)[number] | undefined>((leader, candidate) => {
+    if (!leader) return candidate;
+    const lead = mentions(candidate.head) - mentions(leader.head);
+    return lead > 0 || (lead === 0 && specificity(candidate.head) > specificity(leader.head))
+      ? candidate
+      : leader;
+  }, undefined);
+  let fallback = content[0] ?? "";
+  for (const word of content) {
+    if (specificity(word) > specificity(fallback)) fallback = word;
+  }
   const anchor = explicitName
     ? explicitName.split(/\s+/)[0]!
-    : best || content[0] || "subject";
-
-  // Read the noun phrase leading into the anchor rather than the first four words, so
-  // "air traffic controller" survives instead of "night shift tower automated". Inflected
-  // words are skipped here too, so the phrase reads as a subject rather than a clause.
-  const phrase = content
-    .slice(Math.max(0, anchorIndex - 3), anchorIndex + 1)
-    .filter((word) => word === best || !looksInflected(word))
-    .slice(-3)
-    .join(" ");
+    : best?.head || fallback || "subject";
+  const phrase = best?.phrase ?? fallback;
   const subject = explicitName
     || phrase
     || content.slice(0, 3).join(" ")
@@ -430,6 +504,30 @@ const BEAT_TURNS: ReadonlyArray<(mood: string) => string> = [
 
 const CAST_NAMES = ["MARA", "DEV", "JUNE", "OKAFOR", "LENA", "SAUL", "PRIYA", "COLE"];
 
+/**
+ * The part of a transformation brief the request itself says must not move: "fixed paper
+ * base" in mustInclude, or "keeping its base fixed" in the idea. mustInclude is read first
+ * because it names the part more fully. Returns "" when nothing is declared fixed; the
+ * drafter does not guess one.
+ */
+function declaredFixedPart(request: DevelopmentRequest): string {
+  for (const text of [...request.mustInclude, request.idea]) {
+    const kept = text.match(
+      /\bkeep(?:s|ing)?\s+(?:its|the|their|his|her|a|an)\s+([a-z][\w-]*(?:\s+[a-z][\w-]*)?)\s+(?:fixed|still|stationary|unchanged|in place)\b/i,
+    )?.[1];
+    if (kept) return kept.toLowerCase();
+    const after = text.match(/\b(?:fixed|stationary|unmoving)\s+([^.,;:!?]+)/i)?.[1] ?? "";
+    // Only the noun phrase straight after the adjective: "fixed throughout" names no part.
+    const words: string[] = [];
+    for (const word of after.split(/\s+/)) {
+      if (!/^[a-zA-Z][\w-]*$/.test(word) || STOPWORDS.has(word.toLowerCase()) || words.length === 3) break;
+      words.push(word.toLowerCase());
+    }
+    if (words.length) return words.join(" ");
+  }
+  return "";
+}
+
 // ---------- drafting ----------
 export interface DraftOptions {
   /** Changes the concept selection and every downstream choice. Same seed, same packet. */
@@ -503,6 +601,14 @@ export function draftPacket(input: unknown, options: DraftOptions = {}): DraftRe
   const framework = selectFramework(request);
   const isARoll = request.format === "a-roll";
   const isFrames = request.format === "image";
+  // A transformation brief changes its anchor by definition. Locking the anchor's geometry
+  // forbade the brief itself: the temporal-evolution compiler printed "sapling geometry and
+  // finish unchanged" as an immutable key of a sapling that must unfold into a tree. Such a
+  // brief locks only the part the request declares fixed, and nothing when it declares none.
+  const fixedPart = request.requiresTransformation ? declaredFixedPart(request) : "";
+  const objectLocks = request.requiresTransformation
+    ? (fixedPart ? [`${fixedPart} position, geometry and finish unchanged`] : [])
+    : [`${idea.anchor} geometry and finish unchanged`];
 
   const arc = ARCS[FORMAT_ARC[request.format]]!;
   const total = Math.max(arc.length * 2, Math.round(request.targetDurationSeconds));
@@ -634,7 +740,7 @@ export function draftPacket(input: unknown, options: DraftOptions = {}): DraftRe
       })),
       continuityLocks: [
         ...characters.map((character) => `${character.name} identity and wardrobe unchanged`),
-        `${idea.anchor} geometry and finish unchanged`,
+        ...objectLocks,
         "light direction and screen direction unchanged",
       ],
       imperfectionAnchors: pickN(rng, [

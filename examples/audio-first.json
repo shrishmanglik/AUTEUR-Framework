@@ -1,0 +1,588 @@
+{
+  "schemaVersion": "1.0.0",
+  "metadata": {
+    "title": "Bronze Bell: The POV Flip",
+    "format": "other",
+    "aspectRatio": "16:9",
+    "targetDurationSeconds": 12,
+    "audience": "independent filmmakers",
+    "tone": [
+      "restrained",
+      "tactile"
+    ],
+    "providerTarget": "provider-neutral",
+    "continuityStrictness": "strict",
+    "audioRequired": true
+  },
+  "story": {
+    "logline": "Tell Bronze Bell from the least expected witness: the object, the obstacle, or the rival watching it happen.",
+    "dramaticQuestion": "Does Bronze Bell still hold once the rule of the world changes?",
+    "beats": [
+      {
+        "id": "beat-1",
+        "title": "Hook",
+        "purpose": "Interrupt with the strangest true image of the idea",
+        "emotionalTurn": "the playful tension is established before anything is explained"
+      },
+      {
+        "id": "beat-2",
+        "title": "Friction",
+        "purpose": "Show the world straining without the promise",
+        "emotionalTurn": "the playful tension tightens as the want becomes specific"
+      },
+      {
+        "id": "beat-3",
+        "title": "The Turn",
+        "purpose": "The subject enters and the rule of the world changes",
+        "emotionalTurn": "the playful tension turns costly and the easy option closes"
+      },
+      {
+        "id": "beat-4",
+        "title": "Proof",
+        "purpose": "Hero behaviour rendered as physical fact, close enough to touch",
+        "emotionalTurn": "the playful tension breaks into a decision that cannot be taken back"
+      },
+      {
+        "id": "beat-5",
+        "title": "Button",
+        "purpose": "One held image that owns the promise, with any title reserved for post",
+        "emotionalTurn": "the playful tension settles into what the decision left behind"
+      }
+    ]
+  },
+  "characters": [
+    {
+      "id": "priya",
+      "name": "Priya",
+      "role": "principal",
+      "identityLock": [
+        "a person in their forties",
+        "close-cropped grey hair",
+        "a small scar on the right thumb"
+      ],
+      "wardrobeLock": [
+        "a charcoal work shirt with rolled sleeves",
+        "plain dark trousers"
+      ]
+    }
+  ],
+  "scenes": [
+    {
+      "id": "scene-1",
+      "title": "Hook",
+      "purpose": "Interrupt with the strangest true image of the idea",
+      "location": "bronze bell interior, controlled light",
+      "timeOfDay": "late afternoon",
+      "shotIds": [
+        "shot-1"
+      ]
+    },
+    {
+      "id": "scene-2",
+      "title": "Friction",
+      "purpose": "Show the world straining without the promise",
+      "location": "bronze bell interior, controlled light",
+      "timeOfDay": "dawn",
+      "shotIds": [
+        "shot-2"
+      ]
+    },
+    {
+      "id": "scene-3",
+      "title": "The Turn",
+      "purpose": "The subject enters and the rule of the world changes",
+      "location": "bronze bell interior, controlled light",
+      "timeOfDay": "after dark",
+      "shotIds": [
+        "shot-3"
+      ]
+    },
+    {
+      "id": "scene-4",
+      "title": "Proof",
+      "purpose": "Hero behaviour rendered as physical fact, close enough to touch",
+      "location": "bronze bell interior, controlled light",
+      "timeOfDay": "mid-morning",
+      "shotIds": [
+        "shot-4"
+      ]
+    },
+    {
+      "id": "scene-5",
+      "title": "Button",
+      "purpose": "One held image that owns the promise, with any title reserved for post",
+      "location": "bronze bell interior, controlled light",
+      "timeOfDay": "mid-morning",
+      "shotIds": [
+        "shot-5"
+      ]
+    }
+  ],
+  "shots": [
+    {
+      "id": "shot-1",
+      "sceneId": "scene-1",
+      "title": "Hook",
+      "characterIds": [
+        "priya"
+      ],
+      "generationRisks": [
+        "IDENTITY_OR_PERFORMANCE"
+      ],
+      "durationSeconds": 2,
+      "intent": "Interrupt with the strangest true image of the idea",
+      "subject": "Priya with bell in frame",
+      "action": "interrupt with the strangest true image of the idea, staged so the change is visible in frame",
+      "environment": "bronze bell, dressed plainly so bell reads first",
+      "frameStates": {},
+      "camera": {
+        "shotType": "wide establishing",
+        "movement": "locked tripod with a slow settle",
+        "framing": "subject on the lower third with the world readable above",
+        "focusBehavior": "deep focus holds both subject and environment legible",
+        "optics": {
+          "cameraBody": "full-frame cinema camera",
+          "lensModel": "spherical prime",
+          "focalLengthMm": 24,
+          "tStop": 5.6,
+          "subjectDistanceMeters": 6
+        },
+        "capture": {}
+      },
+      "lighting": {
+        "primarySource": "a low raking work light",
+        "motivation": "the only powered source in bronze bell",
+        "paletteBase": [
+          "aged concrete",
+          "sodium orange",
+          "deep charcoal"
+        ],
+        "isDesaturated": true,
+        "isCrushedBlacks": false
+      },
+      "physics": [
+        "bell holds its mass and does not drift between beats",
+        "contact between hand and object deforms both believably",
+        "any settling motion decays under gravity rather than stopping abruptly"
+      ],
+      "materials": [
+        "aged paper",
+        "scarred walnut",
+        "painted concrete"
+      ],
+      "beats": [
+        {
+          "startSeconds": 0,
+          "endSeconds": 1,
+          "action": "the frame settles and bell is established in its opening state"
+        },
+        {
+          "startSeconds": 1,
+          "endSeconds": 2,
+          "action": "the beat resolves into a stable handoff"
+        }
+      ],
+      "continuityLocks": [
+        "Priya identity and wardrobe unchanged",
+        "bell geometry and finish unchanged",
+        "light direction and screen direction unchanged"
+      ],
+      "imperfectionAnchors": [
+        "a faint fingerprint on the nearest surface",
+        "an uneven patina where the object is handled most",
+        "dust settled along a single seam"
+      ],
+      "performance": {},
+      "audioTrack": {
+        "soundDesignDirectives": [
+          "low room tone with no music bed",
+          "one distant environmental layer",
+          "fabric movement bound to visible motion"
+        ],
+        "musicDirective": "no score"
+      },
+      "exclusions": [
+        "no invented signage, logos, or on-screen text",
+        "no identity drift between beats",
+        "no unmotivated camera move"
+      ],
+      "frameworkId": "audio-contract"
+    },
+    {
+      "id": "shot-2",
+      "sceneId": "scene-2",
+      "title": "Friction",
+      "characterIds": [
+        "priya"
+      ],
+      "generationRisks": [
+        "IDENTITY_OR_PERFORMANCE"
+      ],
+      "durationSeconds": 2,
+      "intent": "Show the world straining without the promise",
+      "subject": "Priya with bell in frame",
+      "action": "show the world straining without the promise, staged so the change is visible in frame",
+      "environment": "bronze bell, dressed plainly so bell reads first",
+      "frameStates": {},
+      "camera": {
+        "shotType": "medium shot",
+        "movement": "slow measured push",
+        "framing": "subject centred with working space camera-left",
+        "focusBehavior": "focus holds the subject with the background softly separated",
+        "optics": {
+          "cameraBody": "full-frame cinema camera",
+          "lensModel": "spherical prime",
+          "focalLengthMm": 40,
+          "tStop": 2.8,
+          "subjectDistanceMeters": 2.5
+        },
+        "capture": {}
+      },
+      "lighting": {
+        "primarySource": "a low raking work light",
+        "motivation": "the only powered source in bronze bell",
+        "paletteBase": [
+          "aged concrete",
+          "sodium orange",
+          "deep charcoal"
+        ],
+        "isDesaturated": true,
+        "isCrushedBlacks": false
+      },
+      "physics": [
+        "bell holds its mass and does not drift between beats",
+        "contact between hand and object deforms both believably",
+        "any settling motion decays under gravity rather than stopping abruptly"
+      ],
+      "materials": [
+        "matte ceramic",
+        "painted concrete",
+        "oxidised brass"
+      ],
+      "beats": [
+        {
+          "startSeconds": 0,
+          "endSeconds": 1,
+          "action": "the frame settles and bell is established in its opening state"
+        },
+        {
+          "startSeconds": 1,
+          "endSeconds": 2,
+          "action": "the beat resolves into a stable handoff"
+        }
+      ],
+      "continuityLocks": [
+        "Priya identity and wardrobe unchanged",
+        "bell geometry and finish unchanged",
+        "light direction and screen direction unchanged"
+      ],
+      "imperfectionAnchors": [
+        "one edge worn lighter than the rest",
+        "a faint fingerprint on the nearest surface",
+        "a hairline scratch catching the key light"
+      ],
+      "performance": {},
+      "audioTrack": {
+        "soundDesignDirectives": [
+          "fabric movement bound to visible motion",
+          "close handling contact on the hero object",
+          "one distant environmental layer"
+        ],
+        "musicDirective": "no score"
+      },
+      "exclusions": [
+        "no invented signage, logos, or on-screen text",
+        "no identity drift between beats",
+        "no unmotivated camera move"
+      ],
+      "frameworkId": "audio-contract"
+    },
+    {
+      "id": "shot-3",
+      "sceneId": "scene-3",
+      "title": "The Turn",
+      "characterIds": [
+        "priya"
+      ],
+      "generationRisks": [
+        "IDENTITY_OR_PERFORMANCE"
+      ],
+      "durationSeconds": 3,
+      "intent": "The subject enters and the rule of the world changes",
+      "subject": "Priya with bell in frame",
+      "action": "the subject enters and the rule of the world changes, staged so the change is visible in frame",
+      "environment": "bronze bell, dressed plainly so bell reads first",
+      "frameStates": {},
+      "camera": {
+        "shotType": "tracking medium",
+        "movement": "tracking follow at walking pace",
+        "framing": "subject held at a constant screen position while the world moves",
+        "focusBehavior": "focus tracks the subject through the move",
+        "optics": {
+          "cameraBody": "full-frame cinema camera",
+          "lensModel": "spherical prime",
+          "focalLengthMm": 35,
+          "tStop": 2.8,
+          "subjectDistanceMeters": 2.2
+        },
+        "capture": {}
+      },
+      "lighting": {
+        "primarySource": "a low raking work light",
+        "motivation": "the only powered source in bronze bell",
+        "paletteBase": [
+          "aged concrete",
+          "sodium orange",
+          "deep charcoal"
+        ],
+        "isDesaturated": true,
+        "isCrushedBlacks": false
+      },
+      "physics": [
+        "bell holds its mass and does not drift between beats",
+        "contact between hand and object deforms both believably",
+        "any settling motion decays under gravity rather than stopping abruptly"
+      ],
+      "materials": [
+        "painted concrete",
+        "aged paper",
+        "brushed steel"
+      ],
+      "beats": [
+        {
+          "startSeconds": 0,
+          "endSeconds": 1,
+          "action": "the frame settles and bell is established in its opening state"
+        },
+        {
+          "startSeconds": 1,
+          "endSeconds": 2,
+          "action": "the subject enters and the rule of the world changes, staged so the change is visible in frame"
+        },
+        {
+          "startSeconds": 2,
+          "endSeconds": 3,
+          "action": "the beat resolves into a stable handoff"
+        }
+      ],
+      "continuityLocks": [
+        "Priya identity and wardrobe unchanged",
+        "bell geometry and finish unchanged",
+        "light direction and screen direction unchanged"
+      ],
+      "imperfectionAnchors": [
+        "one edge worn lighter than the rest",
+        "a faint fingerprint on the nearest surface",
+        "a hairline scratch catching the key light"
+      ],
+      "performance": {},
+      "audioTrack": {
+        "soundDesignDirectives": [
+          "close handling contact on the hero object",
+          "one distant environmental layer",
+          "low room tone with no music bed"
+        ],
+        "musicDirective": "no score"
+      },
+      "exclusions": [
+        "no invented signage, logos, or on-screen text",
+        "no identity drift between beats",
+        "no unmotivated camera move"
+      ],
+      "frameworkId": "audio-contract"
+    },
+    {
+      "id": "shot-4",
+      "sceneId": "scene-4",
+      "title": "Proof",
+      "characterIds": [
+        "priya"
+      ],
+      "generationRisks": [
+        "IDENTITY_OR_PERFORMANCE"
+      ],
+      "durationSeconds": 3,
+      "intent": "Hero behaviour rendered as physical fact, close enough to touch",
+      "subject": "Priya with bell in frame",
+      "action": "hero behaviour rendered as physical fact, close enough to touch, staged so the change is visible in frame",
+      "environment": "bronze bell, dressed plainly so bell reads first",
+      "frameStates": {},
+      "camera": {
+        "shotType": "extreme macro detail",
+        "movement": "micro parallax across the surface",
+        "framing": "the detail fills the lower centre of frame",
+        "focusBehavior": "focus settles from the leading edge to the material grain",
+        "optics": {
+          "cameraBody": "full-frame cinema camera",
+          "lensModel": "macro prime",
+          "focalLengthMm": 100,
+          "tStop": 4,
+          "subjectDistanceMeters": 0.5
+        },
+        "capture": {}
+      },
+      "lighting": {
+        "primarySource": "a low raking work light",
+        "motivation": "the only powered source in bronze bell",
+        "paletteBase": [
+          "aged concrete",
+          "sodium orange",
+          "deep charcoal"
+        ],
+        "isDesaturated": true,
+        "isCrushedBlacks": false
+      },
+      "physics": [
+        "bell holds its mass and does not drift between beats",
+        "contact between hand and object deforms both believably",
+        "any settling motion decays under gravity rather than stopping abruptly"
+      ],
+      "materials": [
+        "matte ceramic",
+        "scarred walnut",
+        "worn cotton"
+      ],
+      "beats": [
+        {
+          "startSeconds": 0,
+          "endSeconds": 1,
+          "action": "the frame settles and bell is established in its opening state"
+        },
+        {
+          "startSeconds": 1,
+          "endSeconds": 2,
+          "action": "hero behaviour rendered as physical fact, close enough to touch, staged so the change is visible in frame"
+        },
+        {
+          "startSeconds": 2,
+          "endSeconds": 3,
+          "action": "the beat resolves into a stable handoff"
+        }
+      ],
+      "continuityLocks": [
+        "Priya identity and wardrobe unchanged",
+        "bell geometry and finish unchanged",
+        "light direction and screen direction unchanged"
+      ],
+      "imperfectionAnchors": [
+        "dust settled along a single seam",
+        "a faint fingerprint on the nearest surface",
+        "one edge worn lighter than the rest"
+      ],
+      "performance": {},
+      "audioTrack": {
+        "soundDesignDirectives": [
+          "fabric movement bound to visible motion",
+          "low room tone with no music bed",
+          "one distant environmental layer"
+        ],
+        "musicDirective": "no score"
+      },
+      "exclusions": [
+        "no invented signage, logos, or on-screen text",
+        "no identity drift between beats",
+        "no unmotivated camera move"
+      ],
+      "frameworkId": "audio-contract"
+    },
+    {
+      "id": "shot-5",
+      "sceneId": "scene-5",
+      "title": "Button",
+      "characterIds": [
+        "priya"
+      ],
+      "generationRisks": [
+        "IDENTITY_OR_PERFORMANCE"
+      ],
+      "durationSeconds": 2,
+      "intent": "One held image that owns the promise, with any title reserved for post",
+      "subject": "Priya with bell in frame",
+      "action": "one held image that owns the promise, with any title reserved for post, staged so the change is visible in frame",
+      "environment": "bronze bell, dressed plainly so bell reads first",
+      "frameStates": {},
+      "camera": {
+        "shotType": "hero frame",
+        "movement": "slow release and hold",
+        "framing": "subject composed dead centre with symmetrical margin",
+        "focusBehavior": "focus rests on the subject and does not travel",
+        "optics": {
+          "cameraBody": "full-frame cinema camera",
+          "lensModel": "spherical prime",
+          "focalLengthMm": 50,
+          "tStop": 2.8,
+          "subjectDistanceMeters": 1.8
+        },
+        "capture": {}
+      },
+      "lighting": {
+        "primarySource": "a low raking work light",
+        "motivation": "the only powered source in bronze bell",
+        "paletteBase": [
+          "aged concrete",
+          "sodium orange",
+          "deep charcoal"
+        ],
+        "isDesaturated": true,
+        "isCrushedBlacks": false
+      },
+      "physics": [
+        "bell holds its mass and does not drift between beats",
+        "contact between hand and object deforms both believably",
+        "any settling motion decays under gravity rather than stopping abruptly"
+      ],
+      "materials": [
+        "brushed steel",
+        "matte ceramic",
+        "aged paper"
+      ],
+      "beats": [
+        {
+          "startSeconds": 0,
+          "endSeconds": 1,
+          "action": "the frame settles and bell is established in its opening state"
+        },
+        {
+          "startSeconds": 1,
+          "endSeconds": 2,
+          "action": "the final state holds, composed, until the cut"
+        }
+      ],
+      "continuityLocks": [
+        "Priya identity and wardrobe unchanged",
+        "bell geometry and finish unchanged",
+        "light direction and screen direction unchanged"
+      ],
+      "imperfectionAnchors": [
+        "a hairline scratch catching the key light",
+        "an uneven patina where the object is handled most",
+        "dust settled along a single seam"
+      ],
+      "performance": {},
+      "audioTrack": {
+        "soundDesignDirectives": [
+          "close handling contact on the hero object",
+          "fabric movement bound to visible motion",
+          "low room tone with no music bed"
+        ],
+        "musicDirective": "no score"
+      },
+      "exclusions": [
+        "no invented signage, logos, or on-screen text",
+        "no identity drift between beats",
+        "no unmotivated camera move"
+      ],
+      "frameworkId": "audio-contract"
+    }
+  ],
+  "globalStyle": [
+    "intimate, observational, slightly conspiratorial",
+    "playful tension",
+    "physically credible materials"
+  ],
+  "globalExclusions": [
+    "no identity drift",
+    "no generated signage",
+    "no unmotivated lens flare"
+  ]
+}

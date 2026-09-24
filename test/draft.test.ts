@@ -125,6 +125,64 @@ describe("deterministic draft", () => {
       .toBe("locksmith");
   });
 
+  it("anchors on a head noun, never on a framing adjective or an adverb", () => {
+    // The request ideas behind the public audio-first, continuous-take, json-scene-contract,
+    // practical-stunt and temporal-evolution examples. Longest-word selection anchored three
+    // of them on "fictional" and one on "throughout", which titled a published packet
+    // "Fictional: The POV Flip" and cast "Saul with fictional in frame".
+    const cases: ReadonlyArray<readonly [idea: string, anchor: string, subject: string]> = [
+      ["A fictional bell maker taps a bronze bell once and listens as its resonant decay gives way to the quiet workshop.", "bell", "Bronze Bell"],
+      ["A fictional librarian discovers a torn page and places a ribbon beside it before closing the book in one uninterrupted view.", "librarian", "Librarian"],
+      ["A fictional conservator turns a clay seal under a desk lamp until its shallow impression becomes readable.", "conservator", "Conservator"],
+      ["A fictional rehearsal performer steps over a low padded barrier and lands on a marked mat in an empty practice room.", "performer", "Rehearsal Performer"],
+      ["A paper sapling unfolds into a full paper tree on a plain workshop table, keeping its base fixed throughout.", "sapling", "Paper Sapling"],
+      // Guards the fix itself: once modifiers stopped competing, the irregular participle
+      // "understood" was the longest head left in the A-roll example idea.
+      ["A founder explains why the most expensive automation mistake was not bad AI, but automating a process nobody on the team actually understood.", "founder", "Founder"],
+    ];
+    for (const [idea, anchor, subject] of cases) {
+      const parsed = parseIdea(idea);
+      expect(parsed.anchor, idea).toBe(anchor);
+      expect(parsed.subject, idea).toBe(subject);
+      expect(parsed.keywords, idea).not.toContain("fictional");
+      expect(parsed.keywords, idea).not.toContain("throughout");
+    }
+  });
+
+  it("never locks the geometry of the thing a transformation brief asks to change", () => {
+    // The temporal-evolution compiler prints continuity locks as "Identity and geometry"
+    // keys, so "sapling geometry and finish unchanged" forbade the very change the brief
+    // asked for. A transformation keeps only what the request itself declares fixed.
+    const transformation = {
+      ...request,
+      idea: "A paper sapling unfolds into a full paper tree on a plain workshop table, keeping its base fixed throughout.",
+      format: "vfx" as const,
+      targetDurationSeconds: 12,
+      aspectRatio: "16:9" as const,
+      requiresTransformation: true,
+      mustInclude: ["fixed paper base", "visible folding stages", "settled final branches"],
+    };
+    const { packet } = draftPacket(transformation);
+    for (const shot of packet.shots) {
+      expect(shot.continuityLocks.some((lock) => /\bsapling\b/.test(lock)), shot.id).toBe(false);
+      expect(shot.continuityLocks, shot.id).toContain("paper base position, geometry and finish unchanged");
+    }
+    expect(preflightPacket(packet).passed).toBe(true);
+
+    // With nothing declared fixed, the transforming anchor is still left unlocked.
+    const crane = "A folded paper crane slowly opens into a flat sheet.";
+    expect(parseIdea(crane).anchor).toBe("crane");
+    const undeclared = draftPacket({ ...transformation, idea: crane, mustInclude: [] }).packet;
+    for (const shot of undeclared.shots) {
+      expect(shot.continuityLocks.some((lock) => /\bcrane\b/.test(lock)), shot.id).toBe(false);
+    }
+    expect(preflightPacket(undeclared).passed).toBe(true);
+
+    // Control: a brief that asks for no change still locks its anchor's geometry.
+    const still = draftPacket({ ...request, idea: "A hand-blown whisky tumbler is poured in one unbroken macro take." }).packet;
+    expect(still.shots[0]!.continuityLocks).toContain("tumbler geometry and finish unchanged");
+  });
+
   it("honours the requested duration and never drafts a sub-two-second shot", () => {
     for (const seconds of [8, 12, 30, 90]) {
       const { packet } = draftPacket({ ...request, targetDurationSeconds: seconds });
