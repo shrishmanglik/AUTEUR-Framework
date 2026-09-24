@@ -4,6 +4,11 @@ All notable public changes are recorded here. The project follows semantic versi
 
 ## Unreleased
 
+### Fixed
+
+- The deterministic drafter now anchors a draft on the head noun of a noun phrase instead of the longest word in the idea. Scored on length, "A fictional bell maker..." anchored on "fictional" and titled its packet "Fictional", and "...keeping its base fixed throughout" anchored on "throughout". Framing words (`fictional`, `synthetic`, ...), prepositions, adverbs, quantifiers, pronouns and irregular past forms no longer compete, and a noun the idea names twice wins over a longer one. `parseIdea` is exported, so its `anchor`, `subject` and `keywords` can change for existing ideas; the same idea still always yields the same result.
+- A transformation draft (`requiresTransformation: true`) no longer locks the geometry of the thing it asks to change. It locks only the part the request declares fixed, such as `fixed paper base` in `mustInclude`, and no object at all when none is declared.
+
 ## 0.11.0 - 2026-09-04
 
 ### Added

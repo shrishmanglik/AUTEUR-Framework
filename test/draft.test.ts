@@ -136,6 +136,9 @@ describe("deterministic draft", () => {
       ["A fictional conservator turns a clay seal under a desk lamp until its shallow impression becomes readable.", "conservator", "Conservator"],
       ["A fictional rehearsal performer steps over a low padded barrier and lands on a marked mat in an empty practice room.", "performer", "Rehearsal Performer"],
       ["A paper sapling unfolds into a full paper tree on a plain workshop table, keeping its base fixed throughout.", "sapling", "Paper Sapling"],
+      // Guards the fix itself: once modifiers stopped competing, the irregular participle
+      // "understood" was the longest head left in the A-roll example idea.
+      ["A founder explains why the most expensive automation mistake was not bad AI, but automating a process nobody on the team actually understood.", "founder", "Founder"],
     ];
     for (const [idea, anchor, subject] of cases) {
       const parsed = parseIdea(idea);
