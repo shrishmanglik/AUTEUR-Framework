@@ -1,4 +1,4 @@
-# AUTEUR Frameworks — Agent Guide
+# AUTEUR Frameworks: Agent Guide
 
 Canonical guide for any coding agent (Codex, Claude Code, Cursor, opencode, Gemini,
 Copilot) working **on the AUTEUR Frameworks codebase itself**.
@@ -6,7 +6,7 @@ Copilot) working **on the AUTEUR Frameworks codebase itself**.
 `CLAUDE.md` points here. Update this file, not a per-tool copy.
 
 For using the toolkit as a consumer rather than modifying it, read
-[`llms.txt`](llms.txt) — it carries the agent-facing CLI flow and usage rules.
+[`llms.txt`](llms.txt): it carries the agent-facing CLI flow and usage rules.
 
 AUTEUR Frameworks is a provider-neutral TypeScript toolkit that turns production intent
 into a validated **Universal Packet**, then deterministically projects it into a
@@ -38,7 +38,7 @@ carry state that the packet does not hold.
 
 | Path | Contains |
 |---|---|
-| `src/schemas.ts` | Universal Packet schema — the contract |
+| `src/schemas.ts` | Universal Packet schema: the contract |
 | `src/frameworks.ts` | The framework registry |
 | `src/compiler.ts`, `src/storyboard.ts`, `src/production-kit.ts` | Deterministic projections |
 | `src/qc.ts`, `src/route-advisor.ts`, `src/repair.ts` | Pre-flight, routing, constrained repair |
@@ -56,7 +56,7 @@ carry state that the packet does not hold.
   model behavior, or API capability that is not evidenced. Under-claim by default.
 - **Publication boundary.** This is a public repository and the private research corpus
   is not published. Read [`docs/research-boundary.md`](docs/research-boundary.md) before
-  adding fixtures, examples, or evidence. `npm run audit:public` enforces part of this —
+  adding fixtures, examples, or evidence. `npm run audit:public` enforces part of this:
   it is a backstop, not a substitute for judgment.
 - **Adding or removing a framework** means updating `src/frameworks.ts`, the README
   framework table, and the README count badge together. `npm run docs:check` fails when
@@ -73,7 +73,7 @@ carry state that the packet does not hold.
 ## Conventions
 
 - Conventional commits (`feat:`, `fix:`, `docs:`, `refactor:`, `test:`, `chore:`).
-- TypeScript, ES modules, Node >= 22.12. One runtime dependency (`zod`) — adding a second
+- TypeScript, ES modules, Node >= 22.12. One runtime dependency (`zod`): adding a second
   needs maintainer approval.
 - Contribution process, framework-proposal requirements, and review expectations are in
   [`CONTRIBUTING.md`](CONTRIBUTING.md); project roles are in [`GOVERNANCE.md`](GOVERNANCE.md).
