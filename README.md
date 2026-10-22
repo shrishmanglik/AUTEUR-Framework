@@ -48,7 +48,7 @@ The output includes the creative brief, story, scene plan, character and world b
 > npm registry publication is intentionally deferred while the public API stabilizes. Git installs run the package build automatically.
 >
 > **Pin a tag.** `#v0.11.0` is immutable and reproducible. `#main` tracks unreleased work and
-> can change under you — use it only when you specifically want the development tip.
+> can change under you: use it only when you specifically want the development tip.
 > Published tags are listed under [releases](https://github.com/shrishmanglik/auteur-frameworks/tags).
 
 ## Calling AUTEUR from agents (MCP)
